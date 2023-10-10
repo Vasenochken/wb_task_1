@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>WB Shopping cart</title>
+  </head>
+  <body>
+    <div class="modal" id="modal_delivery">
+      <div class="delivery_modal">
+        <div class="delivery_modal_wrapper--title">
+          <h2 class="delivery_modal__title">Способ доставки</h2>
+          <label class="delivery_modal_label_button_close">
+            <button class="delivery_modal_button_close"></button>
+          </label>
+        </div>
+        <div class="delivery_modal__wrapper">
+          <label class="delivery_modal__label_button_point">
+            <button class="delivery_modal__button point">В пункт выдачи</button>
+          </label>
+          <label class="delivery_modal__label_button_courier">
+            <button class="delivery_modal__button courier">Курьером</button>
+          </label>
+        </div>
+        <ul class="delivery_modal__list">
+          <h3 class="delivery_modal__list_title">Мои адреса</h3>
+          <li class="delivery_modal__item">
+            <label class="delivery_modal_label_radio">
+              <input type="radio"/>
+              <span class="delivery_modal_radio_text"></span>
+            </label>
+            <span class="delivery_modal_wrapper--adresat">
+              <span class="delivery_modal_radio_text">
+                г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+              </span>
+              <span class="delivery_modal_rating_point"></span>
+            </span>
+            <label class="delivery_modal__label_button_del">
+              <button class="delivery_modal__button_del"></button>
+            </label>
+          </li>
+        </ul>
+        <label class="delivery_modal__label_button_select">
+          <button class="delivery_modal__button_select"></button>
+        </label>
+      </div>
+    </div>
+    <div class="container">
+      <header class="header">
+        <div class="header__wrapper_left">
+          <button class="header__burger"></button>
+          <img class="header__logo" src="./styles/img/logo.svg"/>
+        </div>
+        <img class="header__logo_mobile" src="./styles/img/logoMobile.svg"/>
+        <form class="header__form">
+          <input class="header__form__search_panel" type="text" value="Я ищу..."/>
+          <button class="header__form__search_button"></button>
+        </form>
+        <button class="header__button_mobile"></button>
+        <div class="header__wrapper_right">
+          <Label class="header__profile">
+            <button class="header__button--profile"></button>
+            <p class="header__button_text--profile">Профиль</p>
+          </label>
+          <Label class="header__cart">
+            <button class="header__button--cart">
+              <div class="header__button_counter"></div>
+            </button>
+            <p class="header__button_text--cart">Корзина</p>
+          </label>
+        </div>
+      </header>
+      <main class="main">
+        <section class="cart">
+          <h1 class="cart__title">Корзина</h1>
+          <div class="cart__accordion">
+            <span class="cart__accordion_wrapper hidden">
+              <span class="cart__accordion_amount">0</span>
+                ·
+              <span class="cart__accordion_total">0</span>
+              <span>сом</span>
+            </span>
+            <label class="cart__label_checkbox--all">
+              <input type="checkbox" value="all">
+              <span class="cart__checkbox_text">Выбрать все</span>
+            </label>
+            <label class="cart__accordion_label">
+              <button class="cart__accordion_button" id="accordion"></button>
+            </label>
+          </div>
+          <ul class="cart__list">
+             <li class="cart__item">
+              <div class="cart__item_wrapper">
+                <label class="cart__item_label">
+                  <label class="cart__item_label_checkbox">
+                    <input type="checkbox" value="all">
+                    <span></span>
+                  </label>
+                  <img class="cart__item_image" src="./styles/img/cardProduct1.png">
+                  <div class="cart__item_box_size"></div>
+                </label>
+                <span class="cart__item_description">
+                  <span class="cart__item_wrapper_price">
+                    <span class="cart__item_price">522</span>
+                    сом
+                    <span class="cart__item_price--old">1051 сом</span>
+                  </span>
+                  <p class="cart__item_name">Футболка UZcotton мужская</p>
+                  <p class="cart__item_color">Цвет: белый</p>
+                  <p class="cart__item_company">Коледино WB</p>
+                </span>
+              </div>
+              <div class="cart__item_wrapper--amount">
+                <div class="cart__item_wrapper_counter">
+                  <button class="cart__counter_dec">−</button>
+                  <span class="cart__counter_value">1</span>
+                  <button class="cart__counter_inc">+</button>
+                </div>
+                <p class="cart__item_rest">Осталось 2 шт.</p>
+                <div class="cart__item_wrapper_buttons">
+                  <button class="cart__item_button_like"></button>
+                  <button class="cart__item_button_del"></button>
+                </div>
+              </div>
+            </li>
+            <li class="cart__item">
+              <div class="cart__item_wrapper">
+                <label class="cart__item_label">
+                  <label class="cart__item_label_checkbox">
+                    <input type="checkbox" value="all">
+                    <span></span>
+                  </label>
+                  <img class="cart__item_image" src="./styles/img/cardProduct2.jpg">
+                  <div class="cart__item_box_size"></div>
+                </label>
+                <span class="cart__item_description">
+                  <span class="cart__item_wrapper_price">
+                    <span class="cart__item_price">10500.235</span>
+                    сом
+                    <span class="cart__item_price--old">1500235 сом</span>
+                  </span>
+                  <p class="cart__item_name">Силиконовый чехол картхолдер (отверстия) для...</p>
+                  <p class="cart__item_color">Цвет: прозрачный</p>
+                  <p class="cart__item_company">Коледино WB</p>
+                </span>
+              </div>
+              <div class="cart__item_wrapper--amount">
+                <div class="cart__item_wrapper_counter">
+                  <button class="cart__counter_dec">−</button>
+                  <span class="cart__counter_value">200</span>
+                  <button class="cart__counter_inc">+</button>
+                </div>
+                <div class="cart__item_wrapper_buttons">
+                  <button class="cart__item_button_like"></button>
+                  <button class="cart__item_button_del"></button>
+                </div>
+              </div>
+            </li>
+            <li class="cart__item">
+              <div class="cart__item_wrapper">
+                <label class="cart__item_label">
+                  <label class="cart__item_label_checkbox">
+                    <input type="checkbox" value="all">
+                    <span></span>
+                  </label>
+                  <img class="cart__item_image" src="./styles/img/cardProduct3.jpg">
+                  <div class="cart__item_box_size"></div>
+                </label>
+                <span class="cart__item_description">
+                  <span class="cart__item_wrapper_price">
+                    <span class="cart__item_price">247</span>
+                    сом
+                    <span class="cart__item_price--old">1051 сом</span>
+                  </span>
+                  <p class="cart__item_name">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</p>
+                  <p class="cart__item_company">Коледино WB</p>
+                </span>
+              </div>
+              <div class="cart__item_wrapper--amount">
+                <div class="cart__item_wrapper_counter">
+                  <button class="cart__counter_dec">−</button>
+                  <span class="cart__counter_value">2</span>
+                  <button class="cart__counter_inc">+</button>
+                </div>
+                <p class="cart__item_rest">Осталось 2 шт.</p>
+                <div class="cart__item_wrapper_buttons">
+                  <button class="cart__item_button_like"></button>
+                  <button class="cart__item_button_del"></button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="cart__accordion--lack">
+            <h2 class="cart__accordion_title--lack">Отсутствуют · 3 товара</h2>
+            <label class="cart__accordion_label--lack">
+              <button class="cart__accordion_button--lack"></button>
+            </label>
+          </div>
+          <ul class="cart__list--lack">
+            <li class="cart__list_item">
+              <div class="cart__item_wrapper">
+                <label class="cart__list_label">
+                <img class="cart__list_image" src="./styles/img/cardProductLack1.png">
+                </label>
+                <span class="cart__item_description">
+                  <span class="test">
+                  <p class="cart__item_name">Футболка UZcotton мужская</p>
+                  </span>
+                  <p class="cart__item_color">Цвет: белый</p>
+                </span>
+              </div>
+              <div class="cart__item_wrapper--amount_lack">
+                <div class="cart__item_wrapper_buttons_lack">
+                  <button class="cart__item_button_like lack"></button>
+                  <button class="cart__item_button_del lack"></button>
+                </div>
+              </div>
+            </li>
+            <li class="cart__list_item">
+              <div class="cart__item_wrapper">
+                <lablel class="cart__list_label">
+                  <label class="cart__label">
+                    <input type="checkbox" value="all">
+                    <span></span>
+                  </label>
+                <img class="cart__list_image" src="./styles/img/cardProductLack2.png">
+                </lablel>
+                <span class="cart__item_description">
+                  <span class="test">
+                  <p class="cart__item_name">Силиконовый чехол картхолдер (отверстия) для...</p>
+                  </span>
+                  <p class="cart__item_color">Цвет: прозрачный</p>
+                </span>
+              </div>
+              <div class="cart__item_wrapper--amount_lack">
+                <div class="cart__item_wrapper_buttons_lack">
+                  <button class="cart__item_button_like lack"></button>
+                  <button class="cart__item_button_del lack"></button>
+                </div>
+              </div>
+            </li>        
+            <li class="cart__list_item">
+              <div class="cart__item_wrapper">
+                <lablel class="cart__list_label">
+                  <label class="cart__label">
+                    <input type="checkbox" value="all">
+                    <span></span>
+                  </label>
+                <img class="cart__list_image" src="./styles/img/cardProductLack3.png">
+                </lablel>
+                <span class="cart__item_description">
+                  <span class="test">
+                  <p class="cart__item_name">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</p>
+                  </span>
+                </span>
+              </div>
+              <div class="cart__item_wrapper--amount_lack">
+                <div class="cart__item_wrapper_buttons_lack">
+                  <button class="cart__item_button_like lack"></button>
+                  <button class="cart__item_button_del lack"></button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="deliveri">
+          <div class="deliveri__title">Способ доставки
+            <label class="deliveri__label_button_change">
+              <button class="deliveri__button_change">Изменить</button>
+            </label>
+          </div>
+          <div class="deliveri__info">
+            <div class="deliveri__box_point">
+              <p class="deliveri__point">Пункт выдачи</p>
+              <p class="deliveri__address">Бишкек, улица Ахматбека Суюмбаева, 12/1</p>
+            </div>
+            <div class="deliveri__wraapper">
+              <span class="deliveri__rating">4.99</span>
+              <p class="deliveri__time">Ежедневно с 10 до 21</p>
+            </div>
+          </div>
+          <div class="deliveri__coast_box">
+            <p class="deliveri__coast">Стоимость доставки</p>
+            <p class="deliveri__price">Бесплатно</p>
+          </div>
+          <div class="deliveri__goods_box">
+            <div class="deliveri__goods_box_wrapper">
+              <p class="deliveri__date">5—6 февраля</p>
+              <div class="deliveri__goods">
+                <div class="deliveri__box_good">
+                  <div class="deliveri__image_count">
+                  </div>
+                  <img class="deliveri__image" src="./styles/img/cardProduct1.jpg">
+                </div>
+                <div class="deliveri__box_good">
+                  <div class="deliveri__image_count">
+                    <span class="deliveri__image_count_value">184</span>
+                  </div>
+                  <img class="deliveri__image" src="./styles/img/cardProduct2.jpg">
+                </div>
+                <div class="deliveri__box_good">
+                  <div class="deliveri__image_count">
+                    <span class="deliveri__image_count_value">2</span>
+                  </div>
+                  <img class="deliveri__image" src="./styles/img/cardProduct3.jpg">
+                </div>
+              </div>
+            </div>
+            <div class="deliveri__goods_box_wrapper">
+              <p class="deliveri__date">7—8 февраля</p>
+              <div class="deliveri__goods">
+                <div class="deliveri__box_good">
+                  <div class="deliveri__image_count pixel">
+                    <span class="deliveri__image_count_value">16</span>
+                  </div>
+                  <img class="deliveri__image" src="./styles/img/cardProduct2.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="deliveri__return">
+            <span class="deliveri__return_info">
+            Обратная доставка товаров на склад при отказе — 
+            <span class="deliveri__return_info_price">бесплатно</span>
+            </span>
+          </div>
+        </section>
+        <div class="delivery_modal">
+          <div class="delivery_modal_wrapper--title">
+            <h2 class="delivery_modal__title">Способ доставки</h2>
+            <label class="delivery_modal_label_button_close">
+              <button class="delivery_modal_button_close"></button>
+            </label>
+          </div>
+          <div class="delivery_modal__wrapper">
+            <label class="delivery_modal__label_button_point">
+              <button class="delivery_modal__button point">В пункт выдачи</button>
+            </label>
+            <label class="delivery_modal__label_button_courier">
+              <button class="delivery_modal__button courier">Курьером</button>
+            </label>
+          </div>
+          <ul class="delivery_modal__list">
+            <h3 class="delivery_modal__list_title">Мои адреса</h3>
+            <li class="delivery_modal__item">
+              <label>
+                <input type="radio" />
+                <span></span>
+              </label>
+              <label class="delivery_modal__label_button_del">
+                <button class="delivery_modal__button_del"></button>
+              </label>
+            </li>
+          </ul>
+          <label class="delivery_modal__label_button_select">
+            <button class="delivery_modal__button_select"></button>
+          </label>
+        </div>
+        <section class="pay">
+          <div class="pay__title">Способ оплаты
+            <label class="pay__label_button_change">
+              <button class="pay__button_change">Изменить</button>
+            </label>
+          </div>
+          <div class="pay__card">
+            <div class="pay__card_box_icon"></div>
+            <span class="pay__card_num">1234 56•• •••• 1234</span>
+            <span class="pay__card_date">01/30</span>
+          </div>
+          <p class="pay__info">Спишем оплату с карты при получении</p>
+        </section>
+        <section class="adresat">
+          <p class="adresat__title">Получатель</p>
+          <form class="adresat__form">
+            <div class="adresat__wrapper_input">
+              <label class="adresat__label">
+                <p class="adresat__label_input">Имя</p>
+                <input class="adresat__input"
+                       type="text"
+                       name="name"
+                       value=""
+                       placeholder="Имя"/>
+                <p class="adresat__input_error">Укажите имя</p>
+              </label>
+            </div>
+            <div class="adresat__wrapper_input">
+              <label class="adresat__label">
+                <p class="adresat__label_input">Фамилия</p>
+                <input class="adresat__input"
+                       type="text"
+                       name="surname"
+                       value=""
+                       placeholder="Фамилия"/>
+                <p class="adresat__input_error">Укажите фамилию</p>
+              </label>
+            </div>
+            <div class="adresat__wrapper_input">
+              <label class="adresat__label">
+                <p class="adresat__label_input">Электронная почта</p>
+                <input class="adresat__input"
+                       type="text"
+                       name="email"
+                       value=""
+                       placeholder="Электронная почта"/>
+                <p class="adresat__input_error">Укажите почту</p>
+              </label>
+            </div>
+            <div class="adresat__wrapper_input">
+              <label class="adresat__label">
+                <p class="adresat__label_input">Телефон</p>
+                <input class="adresat__input"
+                       type="text"
+                       name="phone"
+                       value="+7 988 123-45-67"
+                       placeholder="Телефон"/>
+                <p class="adresat__input_error">Укажите телефон</p>
+              </label>
+            </div>
+            <div class="adresat__wrapper_input">
+              <label class="adresat__label">
+                <p class="adresat__label_input">ИНН</p>
+                <input class="adresat__input"
+                       type="number"
+                       name="inn"
+                       value=""
+                       placeholder="ИНН"/>
+                <p class="adresat__input_label_inn">Для таможенного оформления</p>
+                <p class="adresat__input_error">Укажите инн</p>
+              </label>
+            </div>
+
+
+          </form>
+        </section>
+        <div class="check">
+          <div class="check__wrapper_title">
+            <span class="check__title">Итого</span>
+            <span class="check__total">2 101 063 сом</span>
+          </div>
+          <div class="check__wrapper_info">
+            <div class="check__wrapper_row">
+              <span class="check__amount">203 товара</span>
+              <span class="check__price">2 302 048 сом</span>
+            </div>
+            <div class="check__wrapper_row">
+              <span class="check__discount">Скидка</span>
+              <span class="check__discount_value">−200985 сом</span>
+            </div>
+            <div class="check__wrapper_row">
+              <span class="check__delivery">Доставка</span>
+              <span class="check__delivery_price">Бесплатно</span>
+            </div>
+          </div>
+          <div class="check__return">
+            <span class="check__return_info">
+            Обратная доставка товаров на склад при отказе — 
+            <span class="check__return_info_price">бесплатно</span>
+            </span>
+          </div>
+          <div class="check__on_pay">
+            <label class="check__label_checkbox">
+              <input type="checkbox" value="">
+              <span></span>
+            </label>
+            <span class="check__on_pay_wrapper">
+              <p class="check__on_pay_text">Спишем оплату с карты при получении</p>
+            </span>
+          </div>
+          <div class="check__wrapper_pay">
+            <label class="check__label_button">
+              <button class="check__button">Заказать</button>
+            </label>
+            <div class="check__wrapper_confirm">
+            <span class="check__confirm">
+              Соглашаюсь
+              <span class="check__confirm underline">с правилами пользования торговой площадкой</span>
+              и
+              <span class="check__confirm underline">возврата</span>
+            </span>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">© 2022 <span class="footer__copyright--perfect">ООО</span><span class="footer__copyright--perfect1">«Товары и точка»</span></p>
+      </footer>
+      <nav class="tabbar">
+        <label class="tabbar__label">
+          <button class="tabbar__button icon--home"></button>
+        </label>
+        <label class="tabbar__label">
+          <button class="tabbar__button icon--catalog"></button>
+        </label>
+        <label class="tabbar__label">
+          <button class="tabbar__button icon--cart icon--cart_active">
+            <div class="tabbar__cart_counter tabbar__cart_counter_view">
+              <span class="tabbar__counter_value">3</span>
+            </div>
+          </button>
+        </label>
+        <label class="tabbar__label">
+          <button class="tabbar__button icon--favorites"></button>
+        </label>
+        <label class="tabbar__label">
+          <button class="tabbar__button icon--profile"></button>
+        </label>
+      </nav>
+    </div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
